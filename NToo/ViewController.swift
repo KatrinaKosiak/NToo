@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     
     func setupNavigationBar() {
         navigationController?.navigationBar.isTranslucent = false
-        setupTitleLabel(sender: "Log")
+        setupTitleLabel(sender: "Log") //TODO not working
     }
     //prepare completes these steps before using segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

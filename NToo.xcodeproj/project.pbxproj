@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		8480033021DCD16D0070D389 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8480032F21DCD16D0070D389 /* HomeViewController.swift */; };
 		8480033221DCFD570070D389 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8480033121DCFD570070D389 /* HistoryViewController.swift */; };
+		8480033421DE1F200070D389 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8480033321DE1F200070D389 /* Record.swift */; };
+		8480033621DE23B40070D389 /* Insulin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8480033521DE23B40070D389 /* Insulin.swift */; };
+		8480033821DE249A0070D389 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8480033721DE249A0070D389 /* Exercise.swift */; };
+		8480033A21DE27310070D389 /* Illness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8480033921DE27310070D389 /* Illness.swift */; };
+		8480033C21DE279C0070D389 /* Alcohol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8480033B21DE279C0070D389 /* Alcohol.swift */; };
 		84D2E7DE21BE967D00416B53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D2E7DD21BE967D00416B53 /* AppDelegate.swift */; };
 		84D2E7E021BE967D00416B53 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D2E7DF21BE967D00416B53 /* ViewController.swift */; };
 		84D2E7E321BE967D00416B53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D2E7E121BE967D00416B53 /* Main.storyboard */; };
@@ -21,6 +26,11 @@
 /* Begin PBXFileReference section */
 		8480032F21DCD16D0070D389 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8480033121DCFD570070D389 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		8480033321DE1F200070D389 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
+		8480033521DE23B40070D389 /* Insulin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Insulin.swift; sourceTree = "<group>"; };
+		8480033721DE249A0070D389 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		8480033921DE27310070D389 /* Illness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Illness.swift; sourceTree = "<group>"; };
+		8480033B21DE279C0070D389 /* Alcohol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alcohol.swift; sourceTree = "<group>"; };
 		84D2E7DA21BE967D00416B53 /* NToo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NToo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D2E7DD21BE967D00416B53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84D2E7DF21BE967D00416B53 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +78,11 @@
 				84D2E7EF21BE986100416B53 /* LogViewController.swift */,
 				84D2E7F921BEBE2000416B53 /* LogSegue.swift */,
 				84D2E7E121BE967D00416B53 /* Main.storyboard */,
+				8480033321DE1F200070D389 /* Record.swift */,
+				8480033921DE27310070D389 /* Illness.swift */,
+				8480033B21DE279C0070D389 /* Alcohol.swift */,
+				8480033721DE249A0070D389 /* Exercise.swift */,
+				8480033521DE23B40070D389 /* Insulin.swift */,
 				8480033121DCFD570070D389 /* HistoryViewController.swift */,
 				84D2E7E421BE968600416B53 /* Assets.xcassets */,
 				84D2E7E621BE968600416B53 /* LaunchScreen.storyboard */,
@@ -149,10 +164,15 @@
 			files = (
 				8480033021DCD16D0070D389 /* HomeViewController.swift in Sources */,
 				84D2E7FA21BEBE2000416B53 /* LogSegue.swift in Sources */,
+				8480033C21DE279C0070D389 /* Alcohol.swift in Sources */,
+				8480033621DE23B40070D389 /* Insulin.swift in Sources */,
 				84D2E7F021BE986100416B53 /* LogViewController.swift in Sources */,
 				8480033221DCFD570070D389 /* HistoryViewController.swift in Sources */,
+				8480033421DE1F200070D389 /* Record.swift in Sources */,
+				8480033A21DE27310070D389 /* Illness.swift in Sources */,
 				84D2E7E021BE967D00416B53 /* ViewController.swift in Sources */,
 				84D2E7DE21BE967D00416B53 /* AppDelegate.swift in Sources */,
+				8480033821DE249A0070D389 /* Exercise.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
