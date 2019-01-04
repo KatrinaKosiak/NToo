@@ -74,9 +74,6 @@ class LogViewController: UIViewController {
     
     
     
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         main()
@@ -247,25 +244,28 @@ class LogViewController: UIViewController {
     }
     
     //opening pickerViews
-    @IBAction func selectInsulinType(_ sender: UIButton) {
-        insulinPickerView.isHidden = false
+    @IBAction func selectPicker(_ sender: UIButton) {
+        hidePickers()
+        switch sender {
+        case insulinType:
+            insulinPickerView.isHidden = false
+            break
+        case exerciseType:
+            exerciseTypePickerView.isHidden = false
+            break
+        case exerciseIntensity:
+            exerciseIntensityPickerView.isHidden = false
+            break
+        case illnessType:
+            illnessTypePickerView.isHidden = false
+            break
+        default:
+            break
+        }
+        
     }
     
-    
-    @IBAction func selectExerciseType(_ sender: Any) {
-        exerciseTypePickerView.isHidden = false
-        exerciseIntensityPickerView.isHidden = true
-    }
-    
-    @IBAction func selectExerciseIntensity(_ sender: Any) {
-        exerciseIntensityPickerView.isHidden = false
-        exerciseTypePickerView.isHidden = true
-    }
-    
-    @IBAction func selectIllnessType(_ sender: Any) {
-        illnessTypePickerView.isHidden = false
-    }
-    
+
     //previous - next - submit buttons
     
     @IBAction func selectPrevious(_ sender: Any) {

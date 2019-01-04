@@ -291,7 +291,7 @@
                                             <color key="titleColor" red="0.28001978989999998" green="0.51122146840000005" blue="0.66526848080000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="selectInsulinType:" destination="vx4-mm-HGx" eventType="touchUpInside" id="dSo-hg-K4f"/>
+                                            <action selector="selectPicker:" destination="vx4-mm-HGx" eventType="touchUpInside" id="LDp-RD-Me7"/>
                                         </connections>
                                     </button>
                                     <pickerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ln7-FE-SIi">
@@ -354,7 +354,7 @@
                                             <color key="titleShadowColor" red="0.49854260680000001" green="0.70004302259999995" blue="0.83352267739999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="selectExerciseType:" destination="vx4-mm-HGx" eventType="touchUpInside" id="ZEU-B7-Lpk"/>
+                                            <action selector="selectPicker:" destination="vx4-mm-HGx" eventType="touchUpInside" id="htR-pP-f6A"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ZC-sL-Ctp">
@@ -370,7 +370,7 @@
                                             <color key="titleShadowColor" red="0.49854260680000001" green="0.70004302259999995" blue="0.83352267739999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="selectExerciseIntensity:" destination="vx4-mm-HGx" eventType="touchUpInside" id="963-vT-MtH"/>
+                                            <action selector="selectPicker:" destination="vx4-mm-HGx" eventType="touchUpInside" id="GhB-U1-z3G"/>
                                         </connections>
                                     </button>
                                     <pickerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jz1-Tf-pNu">
@@ -434,7 +434,7 @@
                                             <color key="titleShadowColor" red="0.49854260680000001" green="0.70004302259999995" blue="0.83352267739999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="selectIllnessType:" destination="vx4-mm-HGx" eventType="touchUpInside" id="eFn-Oe-8Hb"/>
+                                            <action selector="selectPicker:" destination="vx4-mm-HGx" eventType="touchUpInside" id="PHG-3F-MxM"/>
                                         </connections>
                                     </button>
                                     <pickerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yba-GI-lZc">
