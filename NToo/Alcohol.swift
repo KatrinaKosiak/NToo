@@ -23,6 +23,8 @@ class Alcohol{
     
     //Methods
     
-    
+    func toString() -> String {
+        return "ABV (Alcohol Volume %) = \(abv ?? 0), Drink Volume = \(volume ?? 0)"
+    }
     
 }

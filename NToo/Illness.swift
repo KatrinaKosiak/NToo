@@ -28,6 +28,8 @@ class Illness{
     
     //Methods
     
-    
+    func toString() -> String {
+        return "Illness Type = \(type ?? ""), Medication = \(medication ?? ""), Units = \(units ?? 0)"
+    }
     
 }

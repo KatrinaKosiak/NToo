@@ -33,7 +33,12 @@ class Record{
     }
     
     //Methods
-    
+    func toString() -> String{
+       // if !(self == nil){
+        return "Carbohydrates (g) = \(carbohydrates ?? 0), \(insulin!.toString()), Levels (mmol/L) = \(levels ?? 0), \(exercise!.toString()), \(illness!.toString()), \(alcohol!.toString()) \u{1F496}"
+        //}
+        //return ""
+    }
     
     
 }

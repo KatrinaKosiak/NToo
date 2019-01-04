@@ -25,6 +25,8 @@ class Exercise{
     
     //Methods
     
-    
+    func toString() -> String {
+        return "Exercise Type = \(type!), Exercise Intensity = \(intensity!), Exercise Time = \(time!)"
+    }
     
 }

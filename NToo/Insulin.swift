@@ -23,8 +23,12 @@ class Insulin{
         
     }
     
+    
     //Methods
     
+    func toString() -> String{
+        return "Insulin type = \(type!), Insulin Units = \(units!)"
+    }
     
     
 }

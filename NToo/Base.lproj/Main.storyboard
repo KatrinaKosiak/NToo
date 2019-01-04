@@ -45,7 +45,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ydi-UI-v8t"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="History" id="1ez-3S-7Hs"/>
+                    <tabBarItem key="tabBarItem" title="History" image="history" selectedImage="history" id="1ez-3S-7Hs"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r4x-VC-Ida" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -59,70 +59,98 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mMU-V5-hfn">
-                                <rect key="frame" x="61" y="200" width="41" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Carbs"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l4O-ae-3rz">
-                                <rect key="frame" x="252" y="200" width="44" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Insulin"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l4O-ae-3rz">
+                                <rect key="frame" x="205" y="114" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="4DW-dC-Fb5"/>
+                                    <constraint firstAttribute="width" constant="120" id="QdL-i5-Gge"/>
+                                </constraints>
+                                <state key="normal" title="Insulin" image="insulin"/>
                                 <connections>
                                     <segue destination="vx4-mm-HGx" kind="show" id="7Nj-V8-Zq0"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RX9-Te-Iu0">
-                                <rect key="frame" x="61" y="200" width="41" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Carbs"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4t0-co-aTg">
+                                <rect key="frame" x="50" y="264" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="LXy-qV-dKf"/>
+                                    <constraint firstAttribute="width" constant="120" id="mKH-WP-vQo"/>
+                                </constraints>
+                                <state key="normal" title="Levels" image="levels"/>
+                                <connections>
+                                    <segue destination="vx4-mm-HGx" kind="show" id="HQv-7y-cls"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qkt-wb-x77">
+                                <rect key="frame" x="205" y="264" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="mVg-xG-nO7"/>
+                                    <constraint firstAttribute="width" constant="120" id="umk-MR-vLw"/>
+                                </constraints>
+                                <state key="normal" title="Exercise" image="exercise"/>
+                                <connections>
+                                    <segue destination="vx4-mm-HGx" kind="show" id="beH-1p-WYy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nfq-sF-DVp">
+                                <rect key="frame" x="50" y="414" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="MHD-9u-MXY"/>
+                                    <constraint firstAttribute="width" constant="120" id="WPF-R8-p74"/>
+                                </constraints>
+                                <state key="normal" title="Illness" image="illness"/>
+                                <connections>
+                                    <segue destination="vx4-mm-HGx" kind="show" id="Krh-82-AKg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xVH-VW-gvB">
+                                <rect key="frame" x="205" y="414" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="3PL-nr-Oa1"/>
+                                    <constraint firstAttribute="height" constant="120" id="7KL-hs-s0j"/>
+                                </constraints>
+                                <state key="normal" title="Alcohol" image="alcohol"/>
+                                <connections>
+                                    <segue destination="vx4-mm-HGx" kind="show" id="auU-N5-vqm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RX9-Te-Iu0">
+                                <rect key="frame" x="50" y="114" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="JcC-jW-mvX"/>
+                                    <constraint firstAttribute="height" constant="120" id="aiG-64-eNf"/>
+                                </constraints>
+                                <state key="normal" title="Carbs" image="carbs"/>
                                 <connections>
                                     <action selector="carbsButton:" destination="aEb-6O-LV0" eventType="touchUpInside" id="gR0-To-LZ3"/>
                                     <segue destination="vx4-mm-HGx" kind="show" id="4hx-Md-GCv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4t0-co-aTg">
-                                <rect key="frame" x="59" y="275" width="44" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Levels"/>
-                                <connections>
-                                    <segue destination="vx4-mm-HGx" kind="show" id="HQv-7y-cls"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qkt-wb-x77">
-                                <rect key="frame" x="245" y="275" width="58" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Exercise"/>
-                                <connections>
-                                    <segue destination="vx4-mm-HGx" kind="show" id="beH-1p-WYy"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nfq-sF-DVp">
-                                <rect key="frame" x="60" y="357" width="43" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Illness"/>
-                                <connections>
-                                    <segue destination="vx4-mm-HGx" kind="show" id="Krh-82-AKg"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xVH-VW-gvB">
-                                <rect key="frame" x="245" y="357" width="58" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Exercise"/>
-                                <connections>
-                                    <segue destination="vx4-mm-HGx" kind="show" id="auU-N5-vqm"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.84075766799999996" green="0.91700506209999999" blue="0.97130733729999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="nfq-sF-DVp" firstAttribute="leading" secondItem="N8i-Pd-6ul" secondAttribute="leading" constant="50" id="DKT-hW-pTh"/>
+                            <constraint firstItem="N8i-Pd-6ul" firstAttribute="trailing" secondItem="l4O-ae-3rz" secondAttribute="trailing" constant="50" id="JNZ-CF-BFD"/>
+                            <constraint firstItem="N8i-Pd-6ul" firstAttribute="trailing" secondItem="xVH-VW-gvB" secondAttribute="trailing" constant="50" id="LDS-DT-aXl"/>
+                            <constraint firstItem="N8i-Pd-6ul" firstAttribute="trailing" secondItem="qkt-wb-x77" secondAttribute="trailing" constant="50" id="M6X-0r-3SK"/>
+                            <constraint firstItem="l4O-ae-3rz" firstAttribute="top" secondItem="N8i-Pd-6ul" secondAttribute="top" constant="50" id="O2r-O0-FNh"/>
+                            <constraint firstItem="4t0-co-aTg" firstAttribute="leading" secondItem="N8i-Pd-6ul" secondAttribute="leading" constant="50" id="SK3-HD-Vfq"/>
+                            <constraint firstItem="4t0-co-aTg" firstAttribute="top" secondItem="qkt-wb-x77" secondAttribute="top" id="a1r-DB-TSt"/>
+                            <constraint firstItem="nfq-sF-DVp" firstAttribute="top" secondItem="4t0-co-aTg" secondAttribute="bottom" constant="30" id="gHi-4k-AuU"/>
+                            <constraint firstItem="qkt-wb-x77" firstAttribute="top" secondItem="l4O-ae-3rz" secondAttribute="bottom" constant="30" id="lhI-JE-Wxp"/>
+                            <constraint firstItem="4t0-co-aTg" firstAttribute="top" secondItem="RX9-Te-Iu0" secondAttribute="bottom" constant="30" id="pq1-9P-i0s"/>
+                            <constraint firstItem="xVH-VW-gvB" firstAttribute="top" secondItem="qkt-wb-x77" secondAttribute="bottom" constant="30" id="qHz-XM-zmb"/>
+                            <constraint firstItem="RX9-Te-Iu0" firstAttribute="top" secondItem="N8i-Pd-6ul" secondAttribute="top" constant="50" id="tCB-bx-2IZ"/>
+                            <constraint firstItem="RX9-Te-Iu0" firstAttribute="leading" secondItem="N8i-Pd-6ul" secondAttribute="leading" constant="50" id="tpv-pQ-VrR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="N8i-Pd-6ul"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Log" id="pgd-FJ-Tla"/>
+                    <tabBarItem key="tabBarItem" title="Log" image="log" selectedImage="log" id="pgd-FJ-Tla"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yfM-7G-iZz" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="aEb-6O-LV0" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2967" y="-221"/>
+            <point key="canvasLocation" x="2965.5999999999999" y="-221.73913043478262"/>
         </scene>
         <!--Log View Controller-->
         <scene sceneID="MG8-qv-OQC">
@@ -138,78 +166,78 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cqN-W3-Xcq">
                                         <rect key="frame" x="13" y="0.0" width="350" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="&quot;Carbs&quot;" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iWO-JZ-6mU">
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="&quot;Carbs&quot;" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iWO-JZ-6mU">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="6BN-XF-emN"/>
                                                     <constraint firstAttribute="height" constant="50" id="Zn3-Dl-o2t"/>
                                                 </constraints>
-                                                <state key="normal" title="Carbs">
+                                                <state key="normal" title="Carbs" image="carbs">
                                                     <color key="titleColor" red="0.28001978989999998" green="0.51122146840000005" blue="0.66526848080000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="carbs:" destination="vx4-mm-HGx" eventType="touchUpInside" id="2FQ-ou-Hzw"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="&quot;Insulin&quot;" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lIf-Hd-icx">
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="&quot;Insulin&quot;" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lIf-Hd-icx">
                                                 <rect key="frame" x="60" y="0.0" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="Rtt-8q-TFF"/>
                                                     <constraint firstAttribute="width" constant="50" id="bhi-MH-P8D"/>
                                                 </constraints>
-                                                <state key="normal" title="Insulin">
+                                                <state key="normal" title="Insulin" image="insulin">
                                                     <color key="titleColor" red="0.28001978989999998" green="0.51122146840000005" blue="0.66526848080000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="carbs:" destination="vx4-mm-HGx" eventType="touchUpInside" id="N3d-ZX-BHA"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x1n-oM-QPd">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x1n-oM-QPd">
                                                 <rect key="frame" x="120" y="0.0" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="0dN-92-xJg"/>
                                                     <constraint firstAttribute="height" constant="50" id="9HH-Rg-fDb"/>
                                                 </constraints>
-                                                <state key="normal" title="Levels">
+                                                <state key="normal" title="Levels" image="levels">
                                                     <color key="titleColor" red="0.28001978989999998" green="0.51122146840000005" blue="0.66526848080000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="carbs:" destination="vx4-mm-HGx" eventType="touchUpInside" id="GVc-p2-R2l"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t7N-OA-yyR">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t7N-OA-yyR">
                                                 <rect key="frame" x="180" y="0.0" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="TlF-g5-vBg"/>
                                                     <constraint firstAttribute="height" constant="50" id="o6P-Q3-Hv7"/>
                                                 </constraints>
-                                                <state key="normal" title="Exercise">
+                                                <state key="normal" title="Exercise" image="exercise">
                                                     <color key="titleColor" red="0.28001978989999998" green="0.51122146840000005" blue="0.66526848080000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="carbs:" destination="vx4-mm-HGx" eventType="touchUpInside" id="O1B-Xz-sKf"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3zI-Pu-CjY">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3zI-Pu-CjY">
                                                 <rect key="frame" x="240" y="0.0" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="IAA-kO-cA0"/>
                                                     <constraint firstAttribute="width" constant="50" id="cSf-xh-ZNz"/>
                                                 </constraints>
-                                                <state key="normal" title="Illness">
+                                                <state key="normal" title="Illness" image="illness">
                                                     <color key="titleColor" red="0.28001978989999998" green="0.51122146840000005" blue="0.66526848080000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="carbs:" destination="vx4-mm-HGx" eventType="touchUpInside" id="GMS-X4-T8o"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j68-p6-xv7">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j68-p6-xv7">
                                                 <rect key="frame" x="300" y="0.0" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="ViJ-cf-at5"/>
                                                     <constraint firstAttribute="width" constant="50" id="YsA-T6-0JL"/>
                                                 </constraints>
-                                                <state key="normal" title="Alcohol">
+                                                <state key="normal" title="Alcohol" image="alcohol">
                                                     <color key="titleColor" red="0.28001978989999998" green="0.51122146840000005" blue="0.66526848080000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
@@ -515,6 +543,16 @@
                                 <state key="normal" title="Submit">
                                     <color key="titleColor" red="0.84075766799999996" green="0.91700506209999999" blue="0.97130733729999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="submitRecord:" destination="vx4-mm-HGx" eventType="touchUpInside" id="UC5-rI-8TX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bc4-BI-oct">
+                                <rect key="frame" x="160" y="419" width="56" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Clear">
+                                    <color key="titleColor" red="0.28001978989999998" green="0.51122146840000005" blue="0.66526848080000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.84075766799999996" green="0.91700506209999999" blue="0.97130733729999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -535,15 +573,18 @@
                             <constraint firstItem="jNV-Ha-N9X" firstAttribute="top" secondItem="Bkn-V7-KKt" secondAttribute="bottom" constant="230" id="HSv-Rg-Nhb"/>
                             <constraint firstItem="Bkn-V7-KKt" firstAttribute="top" secondItem="TJY-FY-RcW" secondAttribute="top" id="IX8-M1-dSt"/>
                             <constraint firstItem="pUf-xR-f0T" firstAttribute="top" secondItem="jNV-Ha-N9X" secondAttribute="bottom" constant="10" id="Mcd-D5-b1H"/>
+                            <constraint firstItem="Bc4-BI-oct" firstAttribute="top" secondItem="pUf-xR-f0T" secondAttribute="bottom" constant="5" id="Pc0-KM-7uo"/>
                             <constraint firstItem="WAn-By-YHb" firstAttribute="bottom" secondItem="Y8P-5p-7Cf" secondAttribute="bottom" id="PgV-ny-pmX"/>
                             <constraint firstItem="bnv-Hg-6kS" firstAttribute="leading" secondItem="TJY-FY-RcW" secondAttribute="leading" id="QcW-MX-aef"/>
                             <constraint firstItem="5u0-eb-iUq" firstAttribute="width" secondItem="aMM-GW-r2A" secondAttribute="width" id="QvM-RZ-ylU"/>
                             <constraint firstItem="cfg-WG-Ynh" firstAttribute="bottom" secondItem="WAn-By-YHb" secondAttribute="bottom" id="TbB-ap-nsG"/>
+                            <constraint firstItem="Bc4-BI-oct" firstAttribute="leading" secondItem="TJY-FY-RcW" secondAttribute="leading" constant="160" id="VbQ-FV-jHY"/>
                             <constraint firstItem="Y8P-5p-7Cf" firstAttribute="top" secondItem="5u0-eb-iUq" secondAttribute="top" id="VnX-Yx-SEv"/>
                             <constraint firstItem="cfg-WG-Ynh" firstAttribute="centerX" secondItem="WAn-By-YHb" secondAttribute="centerX" id="W80-HV-2Y8"/>
                             <constraint firstItem="aMM-GW-r2A" firstAttribute="centerX" secondItem="bnv-Hg-6kS" secondAttribute="centerX" id="ciE-b4-JPH"/>
                             <constraint firstItem="Y8P-5p-7Cf" firstAttribute="width" secondItem="5u0-eb-iUq" secondAttribute="width" id="gxS-M4-Y95"/>
                             <constraint firstItem="jNV-Ha-N9X" firstAttribute="leading" secondItem="TJY-FY-RcW" secondAttribute="leading" constant="110" id="k8P-Ol-QHL"/>
+                            <constraint firstItem="TJY-FY-RcW" firstAttribute="trailing" secondItem="Bc4-BI-oct" secondAttribute="trailing" constant="160" id="lZ0-Wi-Z37"/>
                             <constraint firstItem="Gzb-kN-6Fq" firstAttribute="top" secondItem="Bkn-V7-KKt" secondAttribute="bottom" constant="230" id="lx5-2E-yZG"/>
                             <constraint firstItem="aMM-GW-r2A" firstAttribute="top" secondItem="bnv-Hg-6kS" secondAttribute="top" id="mcu-he-WkB"/>
                             <constraint firstItem="5u0-eb-iUq" firstAttribute="top" secondItem="aMM-GW-r2A" secondAttribute="top" id="q62-ug-aHP"/>
@@ -633,6 +674,16 @@
             <point key="canvasLocation" x="1994" y="134"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="alcohol" width="588" height="579"/>
+        <image name="carbs" width="588" height="579"/>
+        <image name="exercise" width="588" height="579"/>
+        <image name="history" width="25" height="25"/>
+        <image name="illness" width="588" height="579"/>
+        <image name="insulin" width="588" height="579"/>
+        <image name="levels" width="588" height="579"/>
+        <image name="log" width="25" height="25"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="4hx-Md-GCv"/>
     </inferredMetricsTieBreakers>

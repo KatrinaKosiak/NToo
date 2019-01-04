@@ -80,6 +80,12 @@ class LogViewController: UIViewController {
         sourcePickers()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //let cancel = sender as! UIButton
+        let receiver = segue.destination as! LogViewController
+        receiver.highlighted =  highlighted//sends the label text of the button pressed to the LogViewController by setting selectedLabel to that value
+        
+    }
     func setSender(){           //sets the selected label depending on which button was clicked in the previous screen
         switch selectedLabel {
         case "Carbs":
@@ -111,12 +117,8 @@ class LogViewController: UIViewController {
         }
     }
     
-    @IBAction func carbs(_ sender: UIButton) {//sets highlighted value and changes the button color
-        if !(highlighted == nil){
-            highlighted?.setTitleColor(UIColor(red: 71/255, green: 130/255, blue: 170/255, alpha: 1), for: .normal)
-        }
+    @IBAction func carbs(_ sender: UIButton) {//sets highlighted value and calls for the content change according to the button used (sender)
         highlighted = sender
-        sender.setTitleColor(UIColor.white, for: .normal)
         setLabel()
         setContent()
         
@@ -183,35 +185,47 @@ class LogViewController: UIViewController {
         illnessTypePickerView.isHidden = true
         previousBtn.isHidden = true
         nextBtn.isHidden = true
+        carbsBtn.isHighlighted = true
+        insulinBtn.isHighlighted = true
+        levelsBtn.isHighlighted = true
+        exerciseBtn.isHighlighted = true
+        illnessBtn.isHighlighted = true
+        alcoholBtn.isHighlighted = true
         
         switch highlighted?.currentTitle!{
         case "Carbs":
             CarbsView.isHidden = false
             nextBtn.isHidden = false
+            carbsBtn.isHighlighted = false
             break
         case "Insulin":
             InsulinView.isHidden = false
             previousBtn.isHidden = false
             nextBtn.isHidden = false
+            insulinBtn.isHighlighted = false
             break
         case "Levels":
             LevelsView.isHidden = false
             previousBtn.isHidden = false
             nextBtn.isHidden = false
+            levelsBtn.isHighlighted = false
             break
         case "Exercise":
             ExerciseView.isHidden = false
             previousBtn.isHidden = false
             nextBtn.isHidden = false
+            exerciseBtn.isHighlighted = false
             break
         case "Illness":
             IllnessView.isHidden = false
             previousBtn.isHidden = false
             nextBtn.isHidden = false
+            illnessBtn.isHighlighted = false
             break
         case "Alcohol":
             AlcoholView.isHidden = false
             previousBtn.isHidden = false
+            alcoholBtn.isHighlighted = false
             break
         case .none:
             break
@@ -290,7 +304,23 @@ class LogViewController: UIViewController {
         }
     }
     
+    @IBAction func submitRecord(_ sender: UIButton) {
+        
+        let record:Record = Record.init(carbohydrates: 1, insulin: Insulin.init(type: "slow", units: 3), levels: 3, exercise: Exercise.init(type: "Move", intensity: "Fast", time: 80), illness: Illness.init(type: "cold", medication: "nothing", units: 0), alcohol: Alcohol.init(abv: 5, volume: 6))
+        print("------------------------")
+        print("------------------------")
+        print(record.toString())
+        
+    }
 }
+
+
+
+
+
+
+
+
 
 
 
