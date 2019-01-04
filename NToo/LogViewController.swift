@@ -23,6 +23,7 @@ class LogViewController: UIViewController {
     @IBOutlet var illnessBtn: UIButton!
     @IBOutlet var alcoholBtn: UIButton!
     
+    
     //content views
     @IBOutlet var CarbsView: UIView!
     @IBOutlet var InsulinView: UIView!
@@ -59,6 +60,8 @@ class LogViewController: UIViewController {
     @IBOutlet var previousBtn: UIButton!
     @IBOutlet var nextBtn: UIButton!
     
+    var record:Record = Record.init()
+    
     
     private let types = ["Rapid-acting", "Short-acting","Mixed","Intermediate-acting","Long-acting"]
     
@@ -68,9 +71,16 @@ class LogViewController: UIViewController {
     
     private let illnessTypes = ["Cold/Flu", "Stomach Aches","Headache/Migraine"]
     
+    
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         main()
+        
     }
     
     func main(){
@@ -78,6 +88,7 @@ class LogViewController: UIViewController {
         carbs(highlighted!)
         setupViews()
         sourcePickers()
+        setTextFieldDelegates()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -87,34 +98,14 @@ class LogViewController: UIViewController {
         
     }
     func setSender(){           //sets the selected label depending on which button was clicked in the previous screen
-        switch selectedLabel {
-        case "Carbs":
-            //initialHighlighted = carbsBtn
-            highlighted = carbsBtn
-            break
-        case "Insulin":
-            //initialHighlighted = insulinBtn
-            highlighted = insulinBtn
-            break
-        case "Levels":
-            //initialHighlighted = levelsBtn
-            highlighted = levelsBtn
-            break
-        case "Exercise":
-            //initialHighlighted = exerciseBtn
-            highlighted = exerciseBtn
-            break
-        case "Illness":
-            //initialHighlighted = illnessBtn
-            highlighted = illnessBtn
-            break
-        case "Alcohol":
-            //initialHighlighted = alcoholBtn
-            highlighted = alcoholBtn
-            break
-        default:
-            break
-        }
+        
+        let topButtons = [carbsBtn, insulinBtn, levelsBtn, exerciseBtn, illnessBtn, alcoholBtn]
+        for btn in topButtons{
+            if btn?.currentTitle == selectedLabel{
+                highlighted = btn
+            }
+
+       }
     }
     
     @IBAction func carbs(_ sender: UIButton) {//sets highlighted value and calls for the content change according to the button used (sender)
@@ -155,7 +146,17 @@ class LogViewController: UIViewController {
         
     }
     
-    
+    func setTextFieldDelegates(){
+        carbohydratesTextField.delegate = self
+        insulinTextField.delegate = self
+        levelsTextField.delegate = self
+        exerciseTimeTextField.delegate = self
+        medicationTakenTextField.delegate = self
+        illnessUnitsTextField.delegate = self
+        alcoholVolumeTextField.delegate = self
+        abvTextField.delegate = self
+        
+    }
     //setupTitleLabel sets the format and the label text to "sender"
     func setupTitleLabel(sender: String){
         let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width - 32, height: view.frame.height))
@@ -173,24 +174,11 @@ class LogViewController: UIViewController {
     
     
     func setContent(){  //hides all the views and displays only the highlighted one
-        CarbsView.isHidden = true
-        InsulinView.isHidden = true
-        LevelsView.isHidden = true
-        ExerciseView.isHidden = true
-        IllnessView.isHidden = true
-        AlcoholView.isHidden = true
-        insulinPickerView.isHidden = true
-        exerciseTypePickerView.isHidden = true
-        exerciseIntensityPickerView.isHidden = true
-        illnessTypePickerView.isHidden = true
+        hideViews()
+        hidePickers()
+        highlightMenuButtons()
         previousBtn.isHidden = true
         nextBtn.isHidden = true
-        carbsBtn.isHighlighted = true
-        insulinBtn.isHighlighted = true
-        levelsBtn.isHighlighted = true
-        exerciseBtn.isHighlighted = true
-        illnessBtn.isHighlighted = true
-        alcoholBtn.isHighlighted = true
         
         switch highlighted?.currentTitle!{
         case "Carbs":
@@ -200,26 +188,22 @@ class LogViewController: UIViewController {
             break
         case "Insulin":
             InsulinView.isHidden = false
-            previousBtn.isHidden = false
-            nextBtn.isHidden = false
+            showPrevNext()
             insulinBtn.isHighlighted = false
             break
         case "Levels":
             LevelsView.isHidden = false
-            previousBtn.isHidden = false
-            nextBtn.isHidden = false
+            showPrevNext()
             levelsBtn.isHighlighted = false
             break
         case "Exercise":
             ExerciseView.isHidden = false
-            previousBtn.isHidden = false
-            nextBtn.isHidden = false
+            showPrevNext()
             exerciseBtn.isHighlighted = false
             break
         case "Illness":
             IllnessView.isHidden = false
-            previousBtn.isHidden = false
-            nextBtn.isHidden = false
+            showPrevNext()
             illnessBtn.isHighlighted = false
             break
         case "Alcohol":
@@ -234,9 +218,33 @@ class LogViewController: UIViewController {
         }
     }
     
-
+    func hidePickers(){
+        insulinPickerView.isHidden = true
+        exerciseTypePickerView.isHidden = true
+        exerciseIntensityPickerView.isHidden = true
+        illnessTypePickerView.isHidden = true
+    }
+    func hideViews(){
+        CarbsView.isHidden = true
+        InsulinView.isHidden = true
+        LevelsView.isHidden = true
+        ExerciseView.isHidden = true
+        IllnessView.isHidden = true
+        AlcoholView.isHidden = true
+    }
     
-    
+    func highlightMenuButtons(){
+        carbsBtn.isHighlighted = true
+        insulinBtn.isHighlighted = true
+        levelsBtn.isHighlighted = true
+        exerciseBtn.isHighlighted = true
+        illnessBtn.isHighlighted = true
+        alcoholBtn.isHighlighted = true
+    }
+    func showPrevNext(){
+        previousBtn.isHidden = false
+        nextBtn.isHidden = false
+    }
     
     //opening pickerViews
     @IBAction func selectInsulinType(_ sender: UIButton) {
@@ -304,21 +312,46 @@ class LogViewController: UIViewController {
         }
     }
     
+    
+
+    
     @IBAction func submitRecord(_ sender: UIButton) {
+        //adjusting data
+        record.empty()
+        setRecord(record: record)
         
-        let record:Record = Record.init(carbohydrates: 1, insulin: Insulin.init(type: "slow", units: 3), levels: 3, exercise: Exercise.init(type: "Move", intensity: "Fast", time: 80), illness: Illness.init(type: "cold", medication: "nothing", units: 0), alcohol: Alcohol.init(abv: 5, volume: 6))
+        //adjusting outputs/views
+        hidePickers()
         print("------------------------")
         print("------------------------")
         print(record.toString())
         
     }
+    
+    func setRecord(record: Record){
+
+        record.setRecord(record: Record(carbohydrates: Int(carbohydratesTextField.text ?? "0") ?? 0,
+                                        insulin: Insulin(type: (insulinType.titleLabel?.text),
+                                                         units: Int(insulinTextField.text ?? "0") ?? 0),
+                                        levels: Float(levelsTextField.text ?? "0") ?? 0,
+                                        exercise: Exercise(type:exerciseType.titleLabel?.text,
+                                                           intensity: exerciseIntensity.titleLabel?.text,
+                                                           time: Int(exerciseTimeTextField.text ?? "0") ?? 0),
+                                        illness: Illness(type: illnessType.titleLabel?.text,
+                                                         medication: medicationTakenTextField.text ?? "",
+                                                         units: Int(illnessUnitsTextField.text ?? "0") ?? 0),
+                                        alcohol: Alcohol(abv: Float(abvTextField.text ?? "0") ?? 0,
+                                                         volume: Int(alcoholVolumeTextField.text ?? "0") ?? 0)))
+    }
+    
+
+
+
+
+
+
+
 }
-
-
-
-
-
-
 
 
 
@@ -349,10 +382,7 @@ extension LogViewController:UIPickerViewDelegate, UIPickerViewDataSource{
     
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        insulinPickerView.isHidden = true
-        exerciseTypePickerView.isHidden = true
-        exerciseIntensityPickerView.isHidden = true
-        illnessTypePickerView.isHidden = true
+        hidePickers()
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
@@ -390,6 +420,33 @@ extension LogViewController:UIPickerViewDelegate, UIPickerViewDataSource{
             return types[row]
         }
     }
-    
+}
 
+extension LogViewController:UITextFieldDelegate{
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let aSet = NSCharacterSet(charactersIn:"0123456789").inverted
+        let bSet = NSCharacterSet(charactersIn:"0123456789.").inverted
+        
+        var compSepByCharInSet: [String]
+        var numberFiltered: String
+
+        switch textField {
+        case carbohydratesTextField, insulinTextField, exerciseTimeTextField, illnessUnitsTextField, alcoholVolumeTextField:
+           // let aSet = NSCharacterSet(charactersIn:"0123456789").inverted
+            compSepByCharInSet = string.components(separatedBy: aSet)
+            numberFiltered = compSepByCharInSet.joined(separator: "")
+            return string == numberFiltered
+            
+        case levelsTextField, abvTextField:
+            compSepByCharInSet = string.components(separatedBy: bSet)
+            numberFiltered = compSepByCharInSet.joined(separator: "")
+            return string == numberFiltered
+            
+        default:
+            return true
+            
+        }
+
+    }
 }

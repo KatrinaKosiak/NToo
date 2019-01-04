@@ -22,11 +22,41 @@ class Illness{
         self.type = type
         self.medication = medication
         self.units = units
-        
-        
+    }
+    
+    
+    init(){
+        self.type = ""
+        self.medication = ""
+        self.units = 0
     }
     
     //Methods
+    
+    func setIllness(illness: Illness){
+        self.setType(type: illness.type!)
+        self.setMedication(medication: illness.medication!)
+        self.setUnits(units:illness.units!)
+    }
+    
+    
+    func setType(type:String){
+        if !(type == "Illness Type"){
+            self.type = type
+        }
+        else{
+            self.type = ""
+        }
+    }
+    
+    func setMedication(medication:String){
+            self.medication = medication
+    }
+    
+    func setUnits(units:Int){
+        self.units = units
+    }
+    
     
     func toString() -> String {
         return "Illness Type = \(type ?? ""), Medication = \(medication ?? ""), Units = \(units ?? 0)"

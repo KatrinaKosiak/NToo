@@ -17,18 +17,44 @@ class Insulin{
     
     //Init
     init(type: String?, units: Int?){
-        self.type = type
+        if !(type == "Insulin Type"){
+            self.type = type
+        }
+        else {
+            self.type = ""
+        }
         self.units = units
-
-        
     }
     
-    
+    init(){
+        self.type = ""
+        self.units = 0
+    }
+
     //Methods
     
-    func toString() -> String{
-        return "Insulin type = \(type!), Insulin Units = \(units!)"
+
+    func setInsulin(insulin: Insulin){
+        self.setType(type: insulin.type!)
+        self.setUnits(units: insulin.units!)
+    }
+    
+
+    func setType(type:String){
+        if !(type == "Insulin Type"){
+            self.type = type
+        }
+        else{
+            self.type = ""
+        }
+    }
+    
+    func setUnits(units:Int){
+        self.units = units
     }
     
     
+    func toString() -> String{
+        return "Insulin type = \(type ?? "nil"), Insulin Units = \(units ?? 0)"
+    }
 }
